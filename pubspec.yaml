@@ -34,6 +34,13 @@ dependencies:
   get: ^4.7.2
   cached_network_image: ^3.4.1
   provider: ^6.1.2
+  internet_connection_checker: ^1.0.0+1
+  top_snackbar_flutter: ^3.2.0
+  dio: ^5.8.0+1
+  scrollable_positioned_list: ^0.3.8
+  font_awesome_flutter: ^10.8.0
+
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -77,13 +84,22 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
+  fonts:
+     - family: Winky_Sans
+       fonts:
+         - asset: Assets/fonts/Winky_Sans/static/WinkySans-Black.ttf
+         - asset: Assets/fonts/Winky_Sans/static/WinkySans-BlackItalic.ttf
+         - asset: Assets/fonts/Winky_Sans/static/WinkySans-ExtraBoldItalic.ttf
+
+
+fonts:
+    - family: Winky_Sans
+      fonts:
+        - asset: Assets/fonts/Montserrat,Winky_Sans/Montserrat/Montserrat-Italic-VariableFont_wght.ttf
+        - asset: Assets/fonts/Montserrat,Winky_Sans/Montserrat/Montserrat-VariableFont_wght.ttf
+        - asset: Assets/fonts/Montserrat,Winky_Sans/Montserrat/static/Montserrat-Bold.ttf
+
+
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
@@ -91,3 +107,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+

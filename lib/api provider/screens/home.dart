@@ -1,4 +1,5 @@
 import 'package:api/api%20provider/provider/recipeprovider.dart';
+import 'package:api/api%20provider/screens/Searchr.dart';
 import 'package:api/api%20provider/screens/recipegridd.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +14,14 @@ class Recipepage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Recipe'),
         actions: [
-          IconButton(onPressed: (){}, icon:Icon(Icons.search))
+          IconButton(onPressed: ()async{
+            final String? query =await showSearch(context: context, delegate: RecipeSerchdeligate(),
+            );
+            if(query!= null && query.isNotEmpty){
+              recipeProvider.searchRecipes(query);
+            }
+
+          }, icon:Icon(Icons.search))
         ],
       ),
 body: recipeProvider.recipenew.isEmpty

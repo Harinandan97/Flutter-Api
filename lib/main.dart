@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(providers: [ChangeNotifierProvider(create: (_)=>RecipeProvider()..fetchRecipes())
     ],
       child: MaterialApp(title: 'Recipe App',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.blue),debugShowCheckedModeBanner: false,
         home: Recipepage(),
       ),
     );

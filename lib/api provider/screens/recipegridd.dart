@@ -20,7 +20,7 @@ class  Recipegridview extends StatelessWidget {
       final recipe= recipes[index];
       return GestureDetector(
         onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>RciprDetailpage(recipe:recipe)
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>RecipeDetailPage(recipe:recipe)
           )
           );
 

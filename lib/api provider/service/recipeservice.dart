@@ -7,7 +7,9 @@ class Recipeservice{
   Future<Recipes>fetchRecipes()async{
     final response =await http.get(Uri.parse(baaseurl));
     if(response.statusCode==200){
-      return recipesFromJson(response.body);
+      var data =response.body;
+
+      return recipesFromJson(data);
 
     }else{
       throw Exception('Failed to load');

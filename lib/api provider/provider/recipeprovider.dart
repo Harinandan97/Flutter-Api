@@ -3,21 +3,22 @@ import 'package:api/api%20provider/service/recipeservice.dart';
 import 'package:flutter/cupertino.dart';
 
 class RecipeProvider extends ChangeNotifier{
-  List<Recipe> recipes=[];
+  List<Recipe> recipesdata=[];
   List<Recipe> fillterrecipe=[];
 
-  List<Recipe> get recipenew => fillterrecipe.isNotEmpty ? fillterrecipe: recipes;
+  List<Recipe> get recipenew => fillterrecipe.isNotEmpty ? fillterrecipe: recipesdata;
   Future<void>fetchRecipes()async{
     try{
    Recipes data =await Recipeservice().fetchRecipes();
-   recipes =data.recipes?? [];
-   fillterrecipe=recipes;
+   recipesdata =data.recipes?? [];
+
+   fillterrecipe=recipesdata;
     }catch(e){
       throw Exception('Failed to load recipes : $e');
     }
   }
-  void searchRecipes(String,query){
-    fillterrecipe = recipes.where((recipe){
+  void searchRecipes(String query){
+    fillterrecipe = recipesdata.where((recipe){
       return recipe.name!.toLowerCase().contains(query.toLowerCase());
     }).toList();
     notifyListeners();
